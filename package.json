@@ -1,0 +1,33 @@
+{
+  "name": "LaBoleria",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damondias/LaBoleria-BackEnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damondias/LaBoleria-BackEnd/issues"
+  },
+  "homepage": "https://github.com/damondias/LaBoleria-BackEnd#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "pg": "^8.7.3"
+  }
+}
