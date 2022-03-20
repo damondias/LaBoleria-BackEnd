@@ -3,7 +3,7 @@ CREATE TABLE cakes (
 	"name" varchar NOT NULL,
 	"price" numeric NOT NULL,
 	"image" varchar NOT NULL,
-	"description" TEXT NOT NULL,
+	"description" TEXT,
 	CONSTRAINT "cakes_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
