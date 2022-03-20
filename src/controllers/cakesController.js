@@ -8,7 +8,7 @@ export async function postCakes(req, res) {
             SELECT id 
             FROM cakes 
                 WHERE name=$1
-            `, [name]);
+        `, [name]);
         if (cake.rowCount > 0) {
             return res.status(409).send("Bolo já criado");
         }
