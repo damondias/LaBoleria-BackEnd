@@ -14,7 +14,7 @@ CREATE TABLE cakes (
 CREATE TABLE clients (
 	"id" serial NOT NULL,
 	"name" varchar NOT NULL,
-	"adress" varchar NOT NULL,
+	"address" varchar NOT NULL,
 	"phone" varchar NOT NULL,
 	CONSTRAINT "clients_pk" PRIMARY KEY ("id")
 ) WITH (
