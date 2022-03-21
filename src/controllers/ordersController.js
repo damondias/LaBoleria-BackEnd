@@ -120,5 +120,38 @@ export async function getOrders(req, res){
   catch (error) {
     res.status(500).send(error);
   }
+}
 
+export async function getOrdersById(req,res){
+
+  const { id } = req.params;
+  if (isNaN(parseInt(id))) {
+    return res.status(400).send("Id inválido");
+  }
+
+  try {
+    const result = await db.query(
+      {
+        text: `
+        SELECT 
+          clients.*,
+          cakes.*,
+          orders."createdAt", orders.quantity, orders."totalPrice"
+        FROM orders
+          JOIN clients ON clients.id=orders."clientId"
+          JOIN cakes ON cakes.id=orders."cakeId"
+        WHERE orders.id=$1`,
+        rowMode: "array",
+      },
+      [id]
+    );
+    if (result.rowCount === 0) {
+      return res.sendStatus(404);
+    }
+
+    res.status(200).send(result.rows.map(mapOrdersArrayToObject));
+  } 
+  catch (error) {
+    res.status(500).send(error);
+  }
 }
