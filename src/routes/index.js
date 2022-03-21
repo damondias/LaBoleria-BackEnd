@@ -9,5 +9,4 @@ router.use(cakesRouter);
 router.use(clientsRouter);
 router.use(ordersRouter);
 
-
 export default router;
