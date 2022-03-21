@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import db from '../database.js';
 
 export async function postClients(req, res) {
@@ -41,6 +42,9 @@ export async function getOrdersByClients(req,res){
                     JOIN cakes ck ON ck.id= o."cakeId"
                     WHERE cl.id= $1
             `,[id]);
+        orders.rows.map((order)=> {        
+            order.createdAt=dayjs(order.createdAt).format('YYYY-MM-DD HH:mm');
+        })
         res.status(200).send(orders.rows);
     } 
     catch (error) {

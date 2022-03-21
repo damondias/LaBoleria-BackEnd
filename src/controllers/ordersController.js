@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import db from "../database.js";
 
 
@@ -31,7 +32,7 @@ function mapOrdersArrayToObject(row) {
       description: cakeDescription,
       image: cakeImage,
     },
-    createdAt,
+    createdAt: dayjs(createdAt).format('YYYY-MM-DD HH:mm'),
     quantity,
     totalPrice,
   };
@@ -73,8 +74,7 @@ export async function postOrders(req, res) {
 export async function getOrders(req, res){
 
   const { date } = req.query;
-  console.log(date);
-
+ 
   try {
 
     const conditions = [];

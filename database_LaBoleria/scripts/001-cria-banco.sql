@@ -28,7 +28,7 @@ CREATE TABLE orders (
 	"clientId" integer NOT NULL,
 	"cakeId" integer NOT NULL,
 	"quantity" integer NOT NULL,
-	"createdAt" DATE NOT NULL DEFAULT 'NOW()',
+	"createdAt" TIMESTAMP NOT NULL DEFAULT 'NOW()',
 	"totalPrice" numeric NOT NULL,
 	CONSTRAINT "orders_pk" PRIMARY KEY ("id")
 ) WITH (
